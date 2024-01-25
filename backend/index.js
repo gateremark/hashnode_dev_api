@@ -110,7 +110,7 @@ const resolvers = {
                 });
                 return response.data.data.user;
             } catch (error) {
-                throw new Error(error);
+                throw new Error("Server Error: ", error);
             }
         },
     },

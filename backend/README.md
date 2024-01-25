@@ -2,28 +2,39 @@
 
 
 ```JavaScript
-query ExampleQuery {
-  publication(host: "gateremark.hashnode.dev") {
-            isTeam
-            title
-            about {
+query User($username: String!) {
+        user(username: $username) {
+            username
+            name
+            profilePicture
+            bio {
                 markdown
+                html
+                text
             }
-    posts {
-      edges {
-        node {
-          title
-          coverImage {
-            url
-          }
-          brief
-          url
-          views
+            socialMediaLinks {
+                website
+                github
+                twitter
+                instagram
+                facebook
+                stackoverflow
+                linkedin
+                youtube
+            }
+            badges {
+                id
+                name
+                description
+                image
+                dateAssigned
+                infoURL
+                suppressed
+            }
+            followersCount
+            followingsCount
+            dateJoined
+            isPro
         }
-      }
     }
-  }
-}
-
-
 ```

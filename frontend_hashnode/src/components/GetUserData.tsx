@@ -2,8 +2,8 @@ import { useQuery, gql } from "@apollo/client";
 import { useState } from "react";
 
 const GET_USER = gql`
-    query User {
-        user(username: "gateremark") {
+    query User($username: String!) {
+        user(username: $username) {
             username
             name
             profilePicture
@@ -39,8 +39,9 @@ const GET_USER = gql`
     }
 `;
 
-function Publication() {
+function User() {
     const [username, setUsername] = useState("gateremark");
+    const [inputValue, setInputValue] = useState(username);
     const { loading, error, data, refetch } = useQuery(GET_USER, {
         variables: { username },
     });
@@ -54,33 +55,33 @@ function Publication() {
             </p>
         );
 
-    const handleSubmit = () => {
-        setUsername(username);
+    const handleSubmit = (e: any) => {
+        e.preventDefault();
+        setUsername(inputValue);
         refetch()
-            .then((response) => {
-                console.log(response.data);
-            })
-            .catch((error) => {
-                console.error(error);
-            });
+            .then(() => console.log("Refetching!"))
+            .catch((err) => console.log(err));
     };
 
-    console.log(data);
+    console.log("data2: ", data);
     return (
         <div className="flex flex-col items-center justify-center min-h-screen">
             <div className="flex flex-col items-center justify-center">
-                <input
-                    type="text"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    className="border-2 border-black p-2 rounded-md"
-                />
-                <button
-                    onClick={handleSubmit}
-                    className="border-2 border-black p-2 rounded-md mt-2"
-                >
-                    Submit
-                </button>
+                <form action="" onSubmit={handleSubmit}>
+                    <input
+                        type="text"
+                        value={inputValue}
+                        onChange={(e) => setInputValue(e.target.value)}
+                        className="border-2 border-black p-2 rounded-md"
+                        placeholder="Enter username"
+                    />
+                    <button
+                        type="submit"
+                        className="border-2 border-black p-2 rounded-md mt-2"
+                    >
+                        Submit
+                    </button>
+                </form>
             </div>
 
             <div className="flex flex-col items-center justify-center">
@@ -113,4 +114,4 @@ function Publication() {
     );
 }
 
-export default Publication;
+export default User;
