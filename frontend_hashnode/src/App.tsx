@@ -3,7 +3,7 @@ import Publication from "./components/GetPublications";
 
 // Set up Apollo Client
 const client = new ApolloClient({
-    uri: "http://localhost:4000/",
+    uri: "https://hashnode-api.onrender.com",
     cache: new InMemoryCache(),
 });
 
