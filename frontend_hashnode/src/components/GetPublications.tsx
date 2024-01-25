@@ -1,31 +1,48 @@
 import { useQuery, gql } from "@apollo/client";
 import { useState } from "react";
 
-const GET_PUBLICATION = gql`
-    query Query($host: String!) {
-        publication(host: $host) {
-            isTeam
-            title
-            about {
+const GET_USER = gql`
+    query User {
+        user(username: "gateremark") {
+            username
+            name
+            profilePicture
+            bio {
                 markdown
+                html
+                text
             }
-            posts(first: 10) {
-                edges {
-                    node {
-                        title
-                        brief
-                        url
-                    }
-                }
+            socialMediaLinks {
+                website
+                github
+                twitter
+                instagram
+                facebook
+                stackoverflow
+                linkedin
+                youtube
             }
+            badges {
+                id
+                name
+                description
+                image
+                dateAssigned
+                infoURL
+                suppressed
+            }
+            followersCount
+            followingsCount
+            dateJoined
+            isPro
         }
     }
 `;
 
 function Publication() {
-    const [host, setHost] = useState("gateremark.hashnode.dev");
-    const { loading, error, data, refetch } = useQuery(GET_PUBLICATION, {
-        variables: { host },
+    const [username, setUsername] = useState("gateremark");
+    const { loading, error, data, refetch } = useQuery(GET_USER, {
+        variables: { username },
     });
 
     if (loading) return <p className="text-center mt-6 text-lg">Loading...</p>;
@@ -37,38 +54,60 @@ function Publication() {
             </p>
         );
 
-    const handleInputChange = (event: any) => {
-        setHost(event.target.value);
-        refetch();
+    const handleSubmit = () => {
+        setUsername(username);
+        refetch()
+            .then((response) => {
+                console.log(response.data);
+            })
+            .catch((error) => {
+                console.error(error);
+            });
     };
 
+    console.log(data);
     return (
-        <div className="flex flex-col text-center gap-6">
-            <input
-                type="text"
-                value={host}
-                onChange={handleInputChange}
-                className="my-2"
-                placeholder="Enter host url"
-            />
-            <div className=" font-semibold text-2xl">
-                {data.publication.title}
+        <div className="flex flex-col items-center justify-center min-h-screen">
+            <div className="flex flex-col items-center justify-center">
+                <input
+                    type="text"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    className="border-2 border-black p-2 rounded-md"
+                />
+                <button
+                    onClick={handleSubmit}
+                    className="border-2 border-black p-2 rounded-md mt-2"
+                >
+                    Submit
+                </button>
             </div>
-            <div className=" text-lg">{data.publication.about.markdown}</div>
-            <div className=" flex w-full gap-4 px-6 flex-wrap mt-6">
-                {data.publication.posts.edges.map((post: any, index: any) => (
-                    <div key={index}>
-                        <h2 className="font-bold">{post.node.title}</h2>
-                        <p>{post.node.brief}</p>
-                        <a
-                            href={post.node.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Read more
-                        </a>
-                    </div>
-                ))}
+
+            <div className="flex flex-col items-center justify-center">
+                <img
+                    src={data.user.profilePicture}
+                    alt="Profile"
+                    className="rounded-full w-48 h-48"
+                />
+                <h1 className="text-2xl font-semibold mt-2">
+                    {data.user.name}
+                </h1>
+                <p className="text-lg font-semibold mt-2">
+                    {data.user.username}
+                </p>
+                <p className="text-lg font-semibold mt-2">
+                    {data.user.bio.text}
+                </p>
+                <p className="text-lg font-semibold mt-2">
+                    {data.user.followersCount}
+                </p>
+                <p className="text-lg font-semibold mt-2">
+                    {data.user.followingsCount}
+                </p>
+                <p className="text-lg font-semibold mt-2">
+                    {data.user.dateJoined}
+                </p>
+                <p className="text-lg font-semibold mt-2">{data.user.isPro}</p>
             </div>
         </div>
     );

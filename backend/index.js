@@ -5,78 +5,110 @@ import axios from "axios";
 // GraphQL schema
 const typeDefs = `#graphql
     type Query {
-        publication(host: String): Publication
+        user(username: String): User
     }
 
-    type Publication {
-        isTeam: Boolean
-        title: String
-        about: About
-        posts(first: Int): Edge
+    # User Schema
+    type User {
+    username: String
+    name: String
+    profilePicture: String
+    bio: Bio
+    socialMediaLinks: SocialMediaLinks
+    badges: [Badge]
+    followersCount: Int
+    followingsCount: Int
+    dateJoined: String
+    isPro: Boolean
     }
 
-    type About {
+    type Bio {
         markdown: String
+        html: String
+        text: String
     }
 
-    type Edge {
-        edges: [Node]
+    type SocialMediaLinks {
+        website: String
+        github: String
+        twitter: String
+        instagram: String
+        facebook: String
+        stackoverflow: String
+        linkedin: String
+        youtube: String
     }
 
-    type Node {
-        node: Post
+    type Badge {
+        id: String
+        name: String
+        description: String
+        image: String
+        dateAssigned: String
+        infoURL: String
+        suppressed: Boolean
     }
 
-    type Post {
-        title: String
-        coverImage: ImageURL
-        brief: String
-        url: String
-        views: String
-    }
+`;
 
-    type ImageURL {
-        url: String
+// GraphQL query
+const USER_QUERY = `
+    query User($username: String!) {
+        user(username: $username) {
+            username
+            name
+            profilePicture
+            bio {
+                markdown
+                html
+                text
+            }
+            socialMediaLinks {
+                website
+                github
+                twitter
+                instagram
+                facebook
+                stackoverflow
+                linkedin
+                youtube
+            }
+            badges {
+                id
+                name
+                description
+                image
+                dateAssigned
+                infoURL
+                suppressed
+            }
+            followersCount
+            followingsCount
+            dateJoined
+            isPro    
+        }
     }
 `;
 
 // resolvers
 const resolvers = {
     Query: {
-        publication: async (_, args) => {
-            // console.log("args", args);
+        user: async (_, args) => {
+            if (!args.username) {
+                throw new Error("Username is required");
+            }
             try {
                 const response = await axios({
                     url: "https://gql.hashnode.com/",
                     method: "post",
                     data: {
-                        query: `
-                            query Publication {
-                                publication(host: "${args.host}") {
-                                    isTeam
-                                    title
-                                    about {
-                                        markdown
-                                    }
-                                    posts(first: 10) {
-                                        edges {
-                                            node {
-                                                title
-                                                coverImage {
-                                                    url
-                                                }
-                                                brief
-                                                url
-                                                views
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        `,
+                        query: USER_QUERY,
+                        variables: {
+                            username: args.username,
+                        },
                     },
                 });
-                return response.data.data.publication;
+                return response.data.data.user;
             } catch (error) {
                 throw new Error(error);
             }
