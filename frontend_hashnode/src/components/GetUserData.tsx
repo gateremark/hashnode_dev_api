@@ -100,7 +100,7 @@ function User() {
                                     >
                                         <source
                                             className=""
-                                            src="hashvid.mp4"
+                                            src="https://res.cloudinary.com/dvuazircp/video/upload/v1706302205/hashvid_x0pxxu.webm"
                                             type="video/mp4"
                                         />
                                     </video>
@@ -109,11 +109,11 @@ function User() {
                         </div>
 
                         <div className="inside-page bg-[#fafbfa] h-full p-4 absolute right-0 w-60 z-10">
-                            <div className="flex flex-col text-center h-full w-full items-center">
+                            <div className="relative flex flex-col text-center h-full w-full items-center">
                                 <form
                                     action=""
                                     onSubmit={handleSubmit}
-                                    className=" flex flex-col w-full p-6 gap-4"
+                                    className=" flex flex-col w-full p-4 gap-4"
                                 >
                                     <input
                                         type="text"
@@ -130,16 +130,17 @@ function User() {
                                     >
                                         {!loading
                                             ? "Generate Worth"
-                                            : "Generating..."}
+                                            : "Loading..."}
                                     </button>
                                 </form>
+
                                 {loading && (
-                                    <div className="flex justify-center items-center h-screen z-20">
+                                    <div className="flex justify-center items-start h-screen z-20">
                                         {" "}
                                         <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-[#2563EB]"></div>
                                     </div>
                                 )}
-                                <span className=" italic">
+                                <span className=" italic absolute bottom-0">
                                     by{" "}
                                     <a
                                         href="https://github.com/gateremark"
