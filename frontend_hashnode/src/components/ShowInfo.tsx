@@ -14,16 +14,16 @@ const ShowInfo = ({ data }: any) => {
                     {data.user.username}
                 </p>
                 <p className="text-lg font-semibold mt-2">
-                    {data.user.bio.text}
+                    {data.user.bio.html}
                 </p>
                 <p className="text-lg font-semibold mt-2">
-                    {data.user.followersCount}
+                    Followers: {data.user.followersCount}
                 </p>
                 <p className="text-lg font-semibold mt-2">
-                    {data.user.followingsCount}
+                    Following: {data.user.followingsCount}
                 </p>
                 <p className="text-lg font-semibold mt-2">
-                    {data.user.dateJoined}
+                    Date Joined: {data.user.dateJoined}
                 </p>
                 <p className="text-lg font-semibold mt-2">{data.user.isPro}</p>
             </div>

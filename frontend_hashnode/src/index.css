@@ -8,3 +8,40 @@
 ::-moz-selection {
     background: #ffd900;
 }
+
+/* A container to hold the flip card and the inside page */
+.card {
+    transition: all 1s ease;
+}
+
+/* When the card is hovered, the flip card container will rotate */
+.card:hover .flip-card__container {
+    transform: rotateY(-180deg);
+}
+
+/* When the card is hovered, the shadow on the inside page will shrink to the left */
+.card:hover .inside-page {
+    box-shadow: inset 1rem 0px 5rem -2.5rem rgba(0, 0, 0, 0.1);
+}
+
+/* An outer container to hold the flip card. This excludes the inside page */
+.flip-card {
+    perspective: 100rem;
+    transition: all 1s ease;
+}
+
+/* An inner container to hold the flip card. This excludes the inside page */
+.flip-card__container {
+    transform-style: preserve-3d;
+    transition: all 1s ease;
+}
+
+/* Specifically targeting the <video> element */
+.video__container {
+    clip-path: polygon(0% 0%, 100% 0%, 90% 50%, 100% 100%, 0% 100%);
+}
+
+.inside-page {
+    box-shadow: inset 20rem 0px 5rem -2.5rem rgba(0, 0, 0, 0.25);
+    transition: all 1s ease;
+}
