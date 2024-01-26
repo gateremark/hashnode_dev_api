@@ -7,7 +7,7 @@ A GraphQL server built with Apollo Server and a ReactJS frontend application tha
 <div align="center">
 <a href="https://hashnode-worth.vercel.app/">
    
-![HomeTopia](https://res.cloudinary.com/dvuazircp/image/upload/v1706303927/hashvid2_tcvh1q.gif)
+![HashnodeWorthGenerator](https://res.cloudinary.com/dvuazircp/image/upload/v1706303927/hashvid2_tcvh1q.gif)
 
 </a>
 </div>
