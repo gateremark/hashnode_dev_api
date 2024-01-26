@@ -1,5 +1,6 @@
 import { toPng } from "html-to-image";
 import { useRef, useState } from "react";
+// import { Tilt } from "react-tilt";
 
 const ShowInfo = ({ data }: any) => {
     const elementRef = useRef<HTMLDivElement | null>(null);
