@@ -64,14 +64,13 @@ const ShowInfo = ({ data }: any) => {
                     </p>
                 </div>
             </div>
-            <div className="flex justify-center items-center">
-                <button
-                    className="bg-[#2563EB] text-white p-2 rounded-lg mt-2"
-                    onClick={htmlToImageConvert}
-                >
-                    {loading ? "Loading..." : "Download"}
-                </button>
-            </div>
+
+            <button
+                className="bg-gradient-to-r from-[#00c6ff] to-[#0072ff] text-white p-2 rounded-lg mt-2 absolute bottom-4"
+                onClick={htmlToImageConvert}
+            >
+                {loading ? "Loading..." : "Download as Image"}
+            </button>
         </>
     );
 };

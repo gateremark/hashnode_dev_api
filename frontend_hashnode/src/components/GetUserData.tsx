@@ -124,14 +124,24 @@ function User() {
                                         className="border border-slate-400 p-2 rounded-md focus:outline-none focus:ring-1 focus:ring-[#2563EB] focus:border-transparent"
                                         placeholder="Enter username"
                                     />
-                                    <button
-                                        type="submit"
-                                        className="bg-[#2563EB] text-white rounded-md p-2"
-                                    >
-                                        {!loading
-                                            ? "Generate Worth"
-                                            : "Loading..."}
-                                    </button>
+                                    {!loading ? (
+                                        <button
+                                            type="submit"
+                                            className="bg-[#2563EB] text-white rounded-md p-2"
+                                            title="Submit"
+                                        >
+                                            Go! Go! Dev!
+                                        </button>
+                                    ) : (
+                                        <button
+                                            type="submit"
+                                            className="bg-[#2563EB50] text-white rounded-md p-2"
+                                            disabled
+                                        >
+                                            {" "}
+                                            Loading...
+                                        </button>
+                                    )}
                                 </form>
 
                                 {loading && (
