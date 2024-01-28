@@ -100,7 +100,7 @@ function User() {
                                     >
                                         <source
                                             className=""
-                                            src="https://res.cloudinary.com/dvuazircp/video/upload/v1706302205/hashvid_x0pxxu.webm"
+                                            src="https://res.cloudinary.com/dvuazircp/video/upload/v1706462393/vidhashdev_vqtcjs.webm"
                                             type="video/mp4"
                                         />
                                     </video>
