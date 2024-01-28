@@ -35,7 +35,7 @@ const ShowInfo = ({ data }: any) => {
                 className="flex flex-col items-center justify-center min-h-screen"
                 ref={elementRef}
             >
-                <div className="flex flex-col items-center justify-center">
+                <div className="flex flex-col items-center justify-center border border-solid border-[#ffffff] mx-60 text-center p-5 mb-8 bg-white">
                     <img
                         src={data.user.profilePicture}
                         alt="Profile"
