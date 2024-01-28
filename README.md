@@ -2,7 +2,7 @@
 
 ![GitHub deployments](https://img.shields.io/github/deployments/gateremark/hashnode_worth_generator/production?style=flat&logo=vercel&logoColor=white&label=vercel)
 
-A GraphQL server built with Apollo Server and a ReactJS frontend application that fetches Hashnode user's information from the Hashnode API based on the username and calculates their 'account worth' estimate.
+A GraphQL server built with Apollo Server and a ReactJS frontend application that fetches Hashnode users' information from the Hashnode API based on their username, calculates their 'account worth' and generates a Hashnode DevCard.
 
 <div align="center">
 <a href="https://hashnode-worth.vercel.app/">
