@@ -1,9 +1,6 @@
 import { toPng } from "html-to-image";
 import { useRef, useState } from "react";
-import {
-    RiVerifiedBadgeFill,
-    RiTwitterXLine,
-} from "react-icons/ri";
+import { RiVerifiedBadgeFill, RiTwitterXLine } from "react-icons/ri";
 import { FaGithub } from "react-icons/fa6";
 import { MdLocationPin } from "react-icons/md";
 import { Tilt } from "react-tilt";
@@ -59,6 +56,9 @@ const ShowInfo = ({ data }: any) => {
                     Latest Blogs
                 </h1>
                 <div className="grid grid-cols-2 p-4 gap-4">
+                    {posts.length === 0 && (
+                        <p className="text-lg text-[#ffffff]">No posts yet</p>
+                    )}
                     {posts.map((p: any) => (
                         <div
                             key={p.node.title}
@@ -162,7 +162,9 @@ const ShowInfo = ({ data }: any) => {
                                             {followers}{" "}
                                         </span>
                                         <span className=" font-normal text-2xl">
-                                            followers
+                                            {followers === 1
+                                                ? "follower"
+                                                : "followers"}
                                         </span>
                                     </p>
                                     {/* <p className="text-lg font-semibold mt-2">
@@ -173,17 +175,22 @@ const ShowInfo = ({ data }: any) => {
                                     </p> */}
 
                                     <p className="text-base mt-4">Badges:</p>
-
-                                    <div className="flex gap-2 mt-1">
-                                        {badges.map((badge: any) => (
-                                            <img
-                                                key={badge.id}
-                                                src={badge.image}
-                                                alt={badge.name}
-                                                className="w-10 h-10"
-                                                title={badge.name}
-                                            />
-                                        ))}
+                                    <div className="flex gap-2 mt-[2px] flex-wrap">
+                                        {badges.length === 0 && (
+                                            <p className="text-base">
+                                                No badges yet
+                                            </p>
+                                        )}
+                                        {badges.length !== 0 &&
+                                            badges.map((badge: any) => (
+                                                <img
+                                                    key={badge.id}
+                                                    src={badge.image}
+                                                    alt={badge.name}
+                                                    className="w-10 h-10"
+                                                    title={badge.name}
+                                                />
+                                            ))}
                                     </div>
                                 </div>
                                 <div className="absolute bottom-2 right-5 flex flex-col text-start">
@@ -224,7 +231,7 @@ const ShowInfo = ({ data }: any) => {
                 className="bg-gradient-to-r from-[#00c6ff] to-[#0072ff] text-white p-2 rounded-lg mt-2 absolute bottom-5 right-1/2 lg:bottom-1/2 lg:right-10"
                 onClick={htmlToImageConvert}
             >
-                {loading ? "Loading..." : "Download DevCard"}
+                {loading ? "Downloading..." : "Download DevCard"}
             </button>
         </div>
     );
