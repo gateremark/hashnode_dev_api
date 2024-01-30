@@ -44,7 +44,7 @@ const ShowInfo = ({ data }: any) => {
                     });
             }
         } catch (error) {
-            console.error("Error converting to image:", error);
+            console.error("Error converting to image: ", error);
         }
     };
     return (
@@ -153,9 +153,6 @@ const ShowInfo = ({ data }: any) => {
                                     </h1>
                                 </div>
 
-                                {/* <p className="text-lg font-semibold mt-2">
-                                    {data.user.bio.text}
-                                </p> */}
                                 <div className="absolute bottom-20 left-5 flex flex-col text-start">
                                     <p className="text-5xl font-medium mt-2 flex flex-col justify-start ">
                                         <span className="acme__font">
@@ -167,12 +164,6 @@ const ShowInfo = ({ data }: any) => {
                                                 : "followers"}
                                         </span>
                                     </p>
-                                    {/* <p className="text-lg font-semibold mt-2">
-                                        Following: {following}
-                                    </p> */}
-                                    {/* <p className="text-lg font-semibold mt-2">
-                                        Date Joined: {dateJoined}
-                                    </p> */}
 
                                     <p className="text-base mt-4">Badges:</p>
                                     <div className="flex gap-2 mt-[2px] flex-wrap">
