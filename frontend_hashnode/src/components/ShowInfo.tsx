@@ -153,7 +153,7 @@ const ShowInfo = ({ data }: any) => {
                                     </h1>
                                 </div>
 
-                                <div className="absolute bottom-20 left-5 flex flex-col text-start">
+                                <div className="absolute bottom-20 left-4 flex flex-col text-start">
                                     <p className="text-5xl font-medium mt-2 flex flex-col justify-start ">
                                         <span className="acme__font">
                                             {followers}{" "}
@@ -196,7 +196,7 @@ const ShowInfo = ({ data }: any) => {
                                         </p>
                                     )}
                                 </div>
-                                <div className="absolute bottom-2 left-5 flex flex-col text-start">
+                                <div className="absolute bottom-2 left-4 flex flex-col text-start">
                                     {/* SOCIAL MEDIA LINKS */}
                                     {github && (
                                         <div className="text-base mt-1 flex justify-start items-center gap-2">
