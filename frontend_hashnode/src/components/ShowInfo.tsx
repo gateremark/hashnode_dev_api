@@ -128,7 +128,7 @@ const ShowInfo = ({ data }: any) => {
                                 <img
                                     src={profilePicture}
                                     alt="Profile"
-                                    className="rounded-full w-[310px] h-[310px] "
+                                    className="rounded-full w-[310px] h-[310px] object-cover object-center"
                                 />
                             </div>
                             <div className=" z-10">
