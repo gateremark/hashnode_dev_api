@@ -1,7 +1,7 @@
 import { toPng } from "html-to-image";
 import { useRef, useState } from "react";
 import { RiVerifiedBadgeFill } from "react-icons/ri";
-// import { Tilt } from "react-tilt";
+import { Tilt } from "react-tilt";
 
 const ShowInfo = ({ data }: any) => {
     const elementRef = useRef<HTMLDivElement | null>(null);
@@ -96,8 +96,8 @@ const ShowInfo = ({ data }: any) => {
             </div>
 
             {/* --------------------------------------- */}
-            <div
-                className="flex flex-col items-center justify-center w-[450px] h-[100vh] text-[#ffffff]"
+            <Tilt
+                className="flex flex-col items-center justify-center w-[450px] h-[100vh] text-[#ffffff] z-50"
                 ref={elementRef}
             >
                 <div
@@ -176,7 +176,7 @@ const ShowInfo = ({ data }: any) => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </Tilt>
 
             <button
                 className="bg-gradient-to-r from-[#00c6ff] to-[#0072ff] text-white p-2 rounded-lg mt-2 absolute bottom-5 right-1/2 lg:bottom-1/2 lg:right-10"
