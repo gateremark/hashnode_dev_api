@@ -6,36 +6,26 @@ const GET_USER = gql`
     query User($username: String!) {
         user(username: $username) {
             username
-            name
             profilePicture
-            bio {
-                markdown
-                html
-                text
-            }
-            socialMediaLinks {
-                website
-                github
-                twitter
-                instagram
-                facebook
-                stackoverflow
-                linkedin
-                youtube
-            }
             badges {
                 id
                 name
-                description
                 image
-                dateAssigned
-                infoURL
-                suppressed
             }
             followersCount
-            followingsCount
-            dateJoined
             isPro
+            posts(page: 1, pageSize: 6) {
+                edges {
+                    node {
+                        title
+                        url
+                        publishedAt
+                    }
+                }
+                nodes {
+                    views
+                }
+            }
         }
     }
 `;
@@ -51,7 +41,7 @@ function User() {
     if (error && error.message.includes("Server Error"))
         return (
             <p className=" text-xl font-semibold ml-2 mt-2 text-[#ff2424] p-2">
-                {`${error.message} User not found!`}
+                {`${error.message}`}
             </p>
         );
 
@@ -68,7 +58,7 @@ function User() {
 
     // console.log("data2: ", data);
     return (
-        <div className="flex flex-col items-center justify-center rounded-lg">
+        <div className="flex flex-col items-center justify-center rounded-lg w-full h-full">
             <div className="absolute inset-0 -z-10 h-full w-full bg-[#2563EB] bg-[radial-gradient(#7ba0f2_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
             {/* {error && error?.message === "Username is required" && (

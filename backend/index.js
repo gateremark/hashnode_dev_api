@@ -11,42 +11,36 @@ const typeDefs = `#graphql
     # User Schema
     type User {
     username: String
-    name: String
     profilePicture: String
-    bio: Bio
-    socialMediaLinks: SocialMediaLinks
     badges: [Badge]
     followersCount: Int
-    followingsCount: Int
-    dateJoined: String
     isPro: Boolean
-    }
-
-    type Bio {
-        markdown: String
-        html: String
-        text: String
-    }
-
-    type SocialMediaLinks {
-        website: String
-        github: String
-        twitter: String
-        instagram: String
-        facebook: String
-        stackoverflow: String
-        linkedin: String
-        youtube: String
+    posts(page: Int, pageSize: Int): Posts
     }
 
     type Badge {
         id: String
         name: String
-        description: String
         image: String
-        dateAssigned: String
-        infoURL: String
-        suppressed: Boolean
+    }
+
+    type Posts {
+        edges: [Edge]
+        nodes: [Node]
+    }
+
+    type Edge {
+        node: Post
+    }
+
+    type Post {
+        title: String
+        url: String
+        publishedAt: String
+    }
+
+    type Node {
+        views: Int
     }
 
 `;
@@ -56,36 +50,26 @@ const USER_QUERY = `
     query User($username: String!) {
         user(username: $username) {
             username
-            name
             profilePicture
-            bio {
-                markdown
-                html
-                text
-            }
-            socialMediaLinks {
-                website
-                github
-                twitter
-                instagram
-                facebook
-                stackoverflow
-                linkedin
-                youtube
-            }
             badges {
                 id
                 name
-                description
                 image
-                dateAssigned
-                infoURL
-                suppressed
             }
             followersCount
-            followingsCount
-            dateJoined
-            isPro    
+            isPro
+            posts(page: 1, pageSize:6) {
+                edges {
+                    node {
+                        title
+                        url
+                        publishedAt
+                    }
+                }
+                nodes {
+                    views
+                }
+            }    
         }
     }
 `;

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cute+Font&family=Poor+Story&family=Single+Day&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Acme&family=Cute+Font&family=Poor+Story&family=Single+Day&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -47,6 +47,8 @@
     transition: all 1s ease;
 }
 
+/* --------------------------------- */
+
 .single__font {
     font-family: "Single Day", cursive;
 }
@@ -57,4 +59,18 @@
 
 .cute__font {
     font-family: "Cute Font", cursive;
+}
+
+.acme__font {
+    font-family: "Acme", sans-serif;
+}
+
+/* --------------------------------- */
+.ag-courses-item_link:hover,
+.ag-courses-item_link:hover .ag-courses-item_date {
+    text-decoration: none;
+    color: #fff;
+}
+.ag-courses-item_link:hover .ag-courses-item_bg {
+    transform: scale(10);
 }

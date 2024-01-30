@@ -3,7 +3,7 @@ import User from "./components/GetUserData";
 
 // Set up Apollo Client
 const client = new ApolloClient({
-    uri: "https://hashnode-api.onrender.com",
+    uri: "http://localhost:4000",
     cache: new InMemoryCache(),
 });
 
