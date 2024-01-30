@@ -10,6 +10,22 @@
     background: #ffd900;
 }
 
+::-webkit-scrollbar {
+    width: 8px;
+    height: 5px;   
+}
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    height: 100%;
+    background: #374045;
+}
+::-webkit-scrollbar-thumb {
+    background: #ffffff;
+    border-radius: 10px;
+}
+
+/* --------------------------------- */
+
 /* A container to hold the flip card and the inside page */
 .card {
     transition: all 1s ease;

@@ -22,9 +22,15 @@ const GET_USER = gql`
                         publishedAt
                     }
                 }
-                nodes {
-                    views
-                }
+            }
+            tagsFollowing {
+                name
+                logo
+            }
+            location
+            socialMediaLinks {
+                github
+                twitter
             }
         }
     }
@@ -59,7 +65,7 @@ function User() {
     // console.log("data2: ", data);
     return (
         <div className="flex flex-col items-center justify-center rounded-lg w-full h-full">
-            <div className="absolute inset-0 -z-10 h-full w-full bg-[#2563EB] bg-[radial-gradient(#7ba0f2_1px,transparent_1px)] [background-size:16px_16px]"></div>
+            <div className="absolute inset-0 -z-10 min-h-[110vh] w-full bg-[#2563EB] bg-[radial-gradient(#7ba0f2_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
             {/* {error && error?.message === "Username is required" && (
                 <p className=" text-xl font-semibold ml-2 mt-2 text-[#2563EB] p-2">

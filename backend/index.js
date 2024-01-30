@@ -16,6 +16,9 @@ const typeDefs = `#graphql
     followersCount: Int
     isPro: Boolean
     posts(page: Int, pageSize: Int): Posts
+    tagsFollowing: [Tags]
+    location: String
+    socialMediaLinks: SocialMediaLinks
     }
 
     type Badge {
@@ -26,7 +29,6 @@ const typeDefs = `#graphql
 
     type Posts {
         edges: [Edge]
-        nodes: [Node]
     }
 
     type Edge {
@@ -39,8 +41,14 @@ const typeDefs = `#graphql
         publishedAt: String
     }
 
-    type Node {
-        views: Int
+    type Tags {
+        name: String
+        logo: String
+    }
+
+    type SocialMediaLinks {
+        github: String
+        twitter: String
     }
 
 `;
@@ -66,10 +74,16 @@ const USER_QUERY = `
                         publishedAt
                     }
                 }
-                nodes {
-                    views
-                }
-            }    
+            } 
+            tagsFollowing {
+                name
+                logo
+            }   
+            location
+            socialMediaLinks {
+                github
+                twitter
+            }
         }
     }
 `;
