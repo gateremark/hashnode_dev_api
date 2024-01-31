@@ -60,7 +60,7 @@ function User() {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center rounded-lg w-full h-full">
+        <div className="flex flex-col items-center justify-center rounded-lg w-full h-[110vh]">
             <div className="absolute inset-0 -z-10 min-h-[180vh] xl:min-h-[110vh] min-w-[100vh] bg-[#2563EB] bg-[radial-gradient(#7ba0f2_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
             {error && (
