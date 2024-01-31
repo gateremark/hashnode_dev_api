@@ -138,7 +138,7 @@ const ShowInfo = ({ data }: any) => {
                                 alt="hashnode"
                                 className="absolute w-16 h-16 border border-slate-600 rounded-3xl p-3 left-3 top-3"
                             />
-                            <h1 className=" absolute text-4xl acme__font flex items-center justify-center gap-1 right-6 top-6">
+                            <h1 className=" absolute text-4xl acme__font flex items-center justify-center gap-1 right-[22px] top-6">
                                 @{username}
                                 {isPro ? (
                                     <RiVerifiedBadgeFill
@@ -196,9 +196,9 @@ const ShowInfo = ({ data }: any) => {
                                         )}
                                     </div>
                                 </div>
-                                <div className="absolute bottom-2 right-5 flex flex-col text-start">
+                                <div className="absolute bottom-2 right-[22px] flex flex-col text-start">
                                     {location && (
-                                        <p className="text-md mt-2 flex justify-start items-center">
+                                        <p className="mt-2 flex justify-start items-center">
                                             <MdLocationPin
                                                 className="inline-block text-blue-500"
                                                 size={20}
