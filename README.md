@@ -29,6 +29,12 @@ A GraphQL server built with Apollo Server and a ReactJS frontend application tha
 
 <a href="https://hashnodedev.vercel.app/">
    
+![HashnodeDevCard](https://res.cloudinary.com/dvuazircp/image/upload/v1706698960/hashnodedev_tk5q6d.png)
+
+</a>
+
+<a href="https://hashnodedev.vercel.app/">
+   
 ![HashnodeDevCard](https://res.cloudinary.com/dvuazircp/image/upload/v1706642854/hashnodedev_2_b46ila.png)
 
 </a>
