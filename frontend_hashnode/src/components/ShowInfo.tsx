@@ -86,8 +86,8 @@ const ShowInfo = ({ data }: any) => {
                                     {p.node.title}
                                 </div>
 
-                                <div className="ag-courses-item_date-box flex gap-1 pt-5 text-lg text-[#ffffff] z-20 relative">
-                                    Published:
+                                <div className="ag-courses-item_date-box flex flex-col sm:flex-row gap-1 pt-5 text-lg text-[#ffffff] z-20 relative">
+                                    <span>Published:</span>
                                     <span className="ag-courses-item_date font-bold text-[#cd3e94] transition-colors duration-500 ease-in-out">
                                         {new Date(
                                             p.node.publishedAt
@@ -233,7 +233,7 @@ const ShowInfo = ({ data }: any) => {
             </Tilt>
 
             <button
-                className="bg-gradient-to-r from-[#00c6ff] to-[#0072ff] text-white p-2 rounded-lg mt-2 absolute bottom-5 right-1/2 lg:bottom-1/2 lg:right-10"
+                className="bg-gradient-to-r from-[#00c6ff] to-[#0072ff] text-white p-2 rounded-lg mt-2 lg:absolute lg:bottom-1/2 lg:right-10 z-50"
                 onClick={htmlToImageConvert}
             >
                 {loading ? "Downloading..." : "Download DevCard"}
