@@ -13,29 +13,36 @@ A GraphQL server built with Apollo Server and a ReactJS frontend application tha
 </div>
 
 ---
+#### `Sample DevCards`
 
 <div align="center" display="flex" >
 <a href="https://hashnodedev.vercel.app/">
    
-![HashnodeDevCard](https://res.cloudinary.com/dvuazircp/image/upload/v1706642880/hashnodedev_ousdmr.png)
+![HashnodeDevCard](https://res.cloudinary.com/dvuazircp/image/upload/v1706714491/hashnodedev_2_fb4ecg.png)
 
 </a>
 
 <a href="https://hashnodedev.vercel.app/">
    
-![HashnodeDevCard](https://res.cloudinary.com/dvuazircp/image/upload/v1706642867/hashnodedev_1_dvpaud.png)
+![HashnodeDevCard](https://res.cloudinary.com/dvuazircp/image/upload/v1706714484/hashnodedev_1_hxbedw.png)
 
 </a>
 
 <a href="https://hashnodedev.vercel.app/">
    
-![HashnodeDevCard](https://res.cloudinary.com/dvuazircp/image/upload/v1706698960/hashnodedev_tk5q6d.png)
+![HashnodeDevCard](https://res.cloudinary.com/dvuazircp/image/upload/v1706714499/hashnodedev_vznrhc.png)
 
 </a>
 
 <a href="https://hashnodedev.vercel.app/">
    
-![HashnodeDevCard](https://res.cloudinary.com/dvuazircp/image/upload/v1706642854/hashnodedev_2_b46ila.png)
+![HashnodeDevCard](https://res.cloudinary.com/dvuazircp/image/upload/v1706714840/hashnodedev_4_c1pna4.png)
+
+</a>
+
+<a href="https://hashnodedev.vercel.app/">
+   
+![HashnodeDevCard](https://res.cloudinary.com/dvuazircp/image/upload/v1706714483/hashnodedev_3_dmsmbz.png)
 
 </a>
 </div>

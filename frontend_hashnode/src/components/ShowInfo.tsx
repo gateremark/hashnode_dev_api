@@ -138,7 +138,7 @@ const ShowInfo = ({ data }: any) => {
                                 alt="hashnode"
                                 className="absolute w-16 h-16 border border-slate-600 rounded-3xl p-3 left-3 top-3"
                             />
-                            <h1 className=" absolute text-4xl acme__font flex items-center justify-center gap-1 right-5 top-6">
+                            <h1 className=" absolute text-4xl acme__font flex items-center justify-center gap-1 right-6 top-6">
                                 @{username}
                                 {isPro ? (
                                     <RiVerifiedBadgeFill
