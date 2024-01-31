@@ -133,28 +133,24 @@ const ShowInfo = ({ data }: any) => {
                                     className="rounded-full w-[310px] h-[310px] object-cover object-center"
                                 />
                             </div>
-                            <div className=" z-10">
-                                <div className="flex items-center mt-2 gap-20">
-                                    <img
-                                        src="hashnode-icon.webp"
-                                        alt="hashnode"
-                                        className=" w-16 h-16 border border-slate-600 rounded-3xl p-3"
+                            <img
+                                src="hashnode-icon.webp"
+                                alt="hashnode"
+                                className="absolute w-16 h-16 border border-slate-600 rounded-3xl p-3 left-3 top-3"
+                            />
+                            <h1 className=" absolute text-4xl acme__font flex items-center justify-center gap-1 right-5 top-6">
+                                @{username}
+                                {isPro ? (
+                                    <RiVerifiedBadgeFill
+                                        className="inline-block text-blue-500"
+                                        size={30}
+                                        title="Hashnode Pro User"
                                     />
-
-                                    <h1 className="text-4xl acme__font flex items-center justify-center gap-1">
-                                        @{username}
-                                        {isPro ? (
-                                            <RiVerifiedBadgeFill
-                                                className="inline-block text-blue-500"
-                                                size={30}
-                                                title="Hashnode Pro User"
-                                            />
-                                        ) : (
-                                            ""
-                                        )}
-                                    </h1>
-                                </div>
-
+                                ) : (
+                                    ""
+                                )}
+                            </h1>
+                            <div className=" z-10">
                                 <div
                                     className={`absolute ${
                                         badges.length > 8
