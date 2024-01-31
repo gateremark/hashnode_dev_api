@@ -153,7 +153,13 @@ const ShowInfo = ({ data }: any) => {
                                     </h1>
                                 </div>
 
-                                <div className="absolute bottom-20 left-4 flex flex-col text-start">
+                                <div
+                                    className={`absolute ${
+                                        badges.length > 8
+                                            ? "bottom-[70px]"
+                                            : "bottom-20"
+                                    }  left-4 flex flex-col text-start`}
+                                >
                                     <p className="text-5xl font-medium mt-2 flex flex-col justify-start ">
                                         <span className="acme__font">
                                             {followers}{" "}
@@ -173,15 +179,23 @@ const ShowInfo = ({ data }: any) => {
                                             </p>
                                         )}
                                         {badges.length !== 0 &&
-                                            badges.map((badge: any) => (
-                                                <img
-                                                    key={badge.id}
-                                                    src={badge.image}
-                                                    alt={badge.name}
-                                                    className="w-10 h-10"
-                                                    title={badge.name}
-                                                />
-                                            ))}
+                                            badges
+                                                .slice(0, 8)
+                                                .map((badge: any) => (
+                                                    <img
+                                                        key={badge.id}
+                                                        src={badge.image}
+                                                        alt={badge.name}
+                                                        className="w-10 h-10"
+                                                        title={badge.name}
+                                                    />
+                                                ))}
+                                        {badges.length > 8 && (
+                                            <p className="text-base text-blue-500">
+                                                + {badges.length - 8} more
+                                                badges
+                                            </p>
+                                        )}
                                     </div>
                                 </div>
                                 <div className="absolute bottom-2 right-5 flex flex-col text-start">
