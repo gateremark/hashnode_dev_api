@@ -57,7 +57,9 @@ const ShowInfo = ({ data }: any) => {
                 </h1>
                 <div className="grid grid-cols-2 p-4 gap-4">
                     {posts.length === 0 && (
-                        <p className="text-lg text-[#ffffff]">No posts yet</p>
+                        <p className="text-lg text-[#ffffff]">
+                            No posts yet 😔
+                        </p>
                     )}
                     {posts.map((p: any) => (
                         <div
@@ -174,7 +176,7 @@ const ShowInfo = ({ data }: any) => {
                                     <p className="text-base mt-4">Badges:</p>
                                     <div className="flex gap-2 mt-[2px] flex-wrap">
                                         {badges.length === 0 && (
-                                            <p className="text-base">
+                                            <p className="text-base text-slate-500">
                                                 No badges yet
                                             </p>
                                         )}
