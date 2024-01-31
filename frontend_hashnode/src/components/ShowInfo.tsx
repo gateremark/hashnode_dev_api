@@ -107,7 +107,7 @@ const ShowInfo = ({ data }: any) => {
             {/* --------------------------------------- */}
             <Tilt className="w-[450px] z-50">
                 <div
-                    className="flex flex-col items-center justify-center w-[450px] h-[100vh] text-[#ffffff]"
+                    className="flex flex-col items-center justify-center w-[450px] md:h-[100vh] h-[81vh] text-[#ffffff]"
                     ref={elementRef}
                 >
                     <div
