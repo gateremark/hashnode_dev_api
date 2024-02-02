@@ -64,21 +64,21 @@ const ShowInfo = ({ data }: any) => {
                     {posts.map((p: any) => (
                         <div
                             key={p.node.title}
-                            className="ag-courses_item h-fit bg-[#121212] rounded-3xl overflow-hidden w-full"
+                            className="h-fit bg-[#121212] rounded-3xl overflow-hidden w-full"
                             title={p.node.title}
                         >
                             <a
                                 href={p.node.url}
-                                className="ag-courses-item_link p-5 block overflow-hidden relative"
+                                className="post-item_link p-5 block overflow-hidden relative"
                                 target="_blank"
                                 rel="noopener"
                             >
                                 <div
-                                    className={`ag-courses-item_bg h-32 w-32 bg-[#cd3e94] z-10 absolute top-[-75px] right-[-75px] rounded-full transition-all duration-500 ease-in-out`}
+                                    className={`post-item_bg h-32 w-32 bg-[#cd3e94] z-10 absolute top-[-75px] right-[-75px] rounded-full transition-all duration-500 ease-in-out`}
                                 ></div>
 
                                 <div
-                                    className="ag-courses-item_title overflow-hidden text-ellipsis font-bold text-[#ffffff] text-xl z-20 relative"
+                                    className="post-item_title overflow-hidden text-ellipsis font-bold text-[#ffffff] text-xl z-20 relative"
                                     style={{
                                         display: "-webkit-box",
                                         WebkitLineClamp: "2",
@@ -88,9 +88,9 @@ const ShowInfo = ({ data }: any) => {
                                     {p.node.title}
                                 </div>
 
-                                <div className="ag-courses-item_date-box flex flex-col sm:flex-row gap-1 pt-5 text-lg text-[#ffffff] z-20 relative">
+                                <div className="flex flex-col sm:flex-row gap-1 pt-5 text-lg text-[#ffffff] z-20 relative">
                                     <span>Published:</span>
-                                    <span className="ag-courses-item_date font-bold text-[#cd3e94] transition-colors duration-500 ease-in-out">
+                                    <span className="post-item_date font-bold text-[#cd3e94] transition-colors duration-500 ease-in-out">
                                         {new Date(
                                             p.node.publishedAt
                                         ).toLocaleDateString("en-US", {

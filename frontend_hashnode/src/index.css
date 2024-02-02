@@ -82,11 +82,11 @@
 }
 
 /* --------------------------------- */
-.ag-courses-item_link:hover,
-.ag-courses-item_link:hover .ag-courses-item_date {
+.post-item_link:hover,
+.post-item_link:hover .post-item_date {
     text-decoration: none;
     color: #fff;
 }
-.ag-courses-item_link:hover .ag-courses-item_bg {
+.post-item_link:hover .post-item_bg {
     transform: scale(10);
 }
