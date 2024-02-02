@@ -46,8 +46,8 @@ function User() {
     // if (loading) return <p className="text-center mt-6 text-lg">Loading...</p>;
     if (error && error.message.includes("Server Error"))
         return (
-            <p className=" text-xl font-semibold ml-2 mt-2 text-[#ff2424] p-2">
-                {`${error.message}`}
+            <p className=" text-2xl font-semibold ml-2 mt-2 text-[#ff2424] p-2">
+                {`Error: ${error.message}`}
             </p>
         );
 
