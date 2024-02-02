@@ -49,7 +49,7 @@ const ShowInfo = ({ data }: any) => {
     };
     return (
         <div className="md:grid lg:grid-cols-2 w-full h-full grid-cols-1">
-            {/* ------------------------------------- */}
+            {/* BLOGS SECTION */}
             <div className=" flex flex-col items-center justify-center">
                 <h1 className="text-6xl poor__font text-[#ffffff]">
                     {" "}
@@ -106,7 +106,7 @@ const ShowInfo = ({ data }: any) => {
                 </div>
             </div>
 
-            {/* --------------------------------------- */}
+            {/* CARD SECTION */}
             <Tilt className="w-[450px] z-50">
                 <div
                     className="flex flex-col items-center justify-center w-[450px] sm:h-[100vh] h-[81vh] text-[#ffffff]"
@@ -230,7 +230,7 @@ const ShowInfo = ({ data }: any) => {
                 </div>
             </Tilt>
 
-            {/* Button to download the dev card */}
+            {/* BUTTON TO DOWNLOAD DEV CARD */}
             <button
                 className="bg-gradient-to-r from-[#00c6ff] to-[#0072ff] text-white p-2 rounded-lg mt-2 lg:absolute lg:bottom-1/2 lg:right-10 z-50 w-fit"
                 onClick={htmlToImageConvert}
