@@ -32,7 +32,7 @@ const ShowInfo = ({ data }: any) => {
                 toPng(elementRef.current, { cacheBust: false })
                     .then((dataUrl) => {
                         const link = document.createElement("a");
-                        link.download = "hashnodedev.png";
+                        link.download = `${username}.png`;
                         link.href = dataUrl;
                         link.click();
                     })
